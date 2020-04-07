@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Support\Str;
 
 class Post extends Model
 {
@@ -31,6 +32,6 @@ class Post extends Model
 
     public function getGetExcerptAttribute()
     {
-        return substr($this->body, 0, 140);
+        return Str::limit($this->body,140);
     }
 }
