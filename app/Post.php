@@ -33,5 +33,6 @@ class Post extends Model
     public function getGetExcerptAttribute()
     {
         return Str::limit($this->body,140);
+        //return substr($this->body, 0, 140); <- también se puede usar así, esto es PHP puro
     }
 }
